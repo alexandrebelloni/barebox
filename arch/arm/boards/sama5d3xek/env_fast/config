@@ -1,0 +1,14 @@
+#!/bin/sh
+
+ip=none
+
+kernel_loc=nand
+rootfs_loc=nand
+oftree_loc=nand
+
+kernelimage=zImage
+
+nand_device=atmel_nand
+nand_parts="256k(at91bootstrap),384k(barebox)ro,256k@768k(bareboxenv),256k(bareboxenv2),128k@1536k(oftree),5M@2M(kernel),-@8M(rootfs)"
+
+bootargs="console=ttyS0,115200 quiet lpj=1314816"

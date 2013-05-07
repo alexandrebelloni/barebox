@@ -1,0 +1,14 @@
+#!/bin/sh
+
+PATH=/env/bin
+export PATH
+
+global hostname
+
+. /env/config
+if [ -e /dev/nand0 -a -n "$nand_parts" ]; then
+	addpart /dev/nand0 $nand_parts
+	nand -a /dev/nand0.*
+fi
+
+boot
